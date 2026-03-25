@@ -1,14 +1,12 @@
 # Cursor Workshop
 
-This repository contains the practice project for the workshop.
-
-You will open it in **Cursor** and make small changes step by step during the session, with support from the facilitator.
+This is the hands-on project for the [**Cursor**](https://cursor.com) workshop. During the session, open it in Cursor and we'll work through small changes together, step by step.
 
 You do **not** need to be a programmer to participate.
 
 ## What is Cursor?
 
-**Cursor** is an editor with built-in AI.
+[**Cursor**](https://cursor.com) is an editor with built-in AI.
 
 In the workshop, you will use it to open this project, describe changes in simple language, and update the website little by little.
 
@@ -17,7 +15,7 @@ In the workshop, you will use it to open this project, describe changes in simpl
 You need:
 
 1. **This project on your computer**  
-   Your facilitator will show you how to get it.
+   We'll cover how to get it at the start of the workshop.
 
 2. **Node.js installed**  
    Download it here if you do not already have it: [Node.js (LTS)](https://nodejs.org/)
@@ -56,12 +54,12 @@ npm run dev
 
 This project uses a few modern web tools:
 
-* **Next.js** for the website
-* **React** for the interface
-* **TypeScript** for the code structure
-* **Tailwind CSS** for styling
+* [**Next.js**](https://nextjs.org) for the website
+* [**React**](https://react.dev) for the interface
+* [**TypeScript**](https://www.typescriptlang.org) for the code structure
+* [**Tailwind CSS**](https://tailwindcss.com) for styling
 
-You do not need to understand these tools before the workshop.
+If those names are new to you, that's fine—you're not here to memorize them first. You'll learn what matters as you go.
 
 ## Main files
 
