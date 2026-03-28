@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Outfit, Syne } from "next/font/google";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const syne = Syne({
-  variable: "--font-syne",
-  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 const siteUrl =
@@ -18,9 +16,9 @@ const siteUrl =
 
 export const metadata: Metadata = {
   ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
-  title: "Cursor Workshop Quito",
+  title: "Carlos Oberto — Senior Full-Stack Engineer",
   description:
-    "Taller práctico en Quito: aprende Cursor, crea y publica tu landing page. Presentado por Cursor Community.",
+    "Senior full-stack engineer (Laravel, Vue, React, AWS). Remote for US companies. Book a call or view selected work.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -36,10 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${outfit.variable} ${syne.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
@@ -50,7 +45,18 @@ export default function RootLayout({
         />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        <LanguageProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </LanguageProvider>
+      </body>
     </html>
   );
 }
